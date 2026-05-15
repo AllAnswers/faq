@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>FAQ Page</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body{
+      background:#f3f3f3;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+
+<body class="px-6 py-12">
+
+  <div class="max-w-5xl mx-auto">
+
+    <h1 class="text-6xl font-black mb-10">
+      Frequently asked questions
+    </h1>
+
+    <div class="space-y-6">
+
+      <!-- FAQ ITEM -->
+      <div class="faq border-2 border-black rounded-[30px] bg-[#ded9d0] overflow-hidden">
+
+        <button class="faq-btn w-full flex items-center justify-between p-7 text-left text-2xl font-bold">
+          <span>Who is the merchant of record?</span>
+          <span class="text-3xl">+</span>
+        </button>
+
+        <div class="faq-content hidden px-7 pb-7 text-lg">
+          The merchant of record handles payment processing and transactions.
+        </div>
+
+      </div>
+
+      <!-- FAQ ITEM -->
+      <div class="faq border-2 border-black rounded-[30px] bg-[#ded9d0] overflow-hidden">
+
+        <button class="faq-btn w-full flex items-center justify-between p-7 text-left text-2xl font-bold">
+          <span>Do I need my own payment account?</span>
+          <span class="text-3xl">+</span>
+        </button>
+
+        <div class="faq-content hidden px-7 pb-7 text-lg">
+          Yes, usually Stripe or PayPal is required.
+        </div>
+
+      </div>
+
+      <!-- FAQ ITEM -->
+      <div class="faq border-2 border-black rounded-[30px] bg-[#ded9d0] overflow-hidden">
+
+        <button class="faq-btn w-full flex items-center justify-between p-7 text-left text-2xl font-bold">
+          <span>What does it charge?</span>
+          <span class="text-3xl">+</span>
+        </button>
+
+        <div class="faq-content hidden px-7 pb-7 text-lg">
+          Pricing depends on your selected plan.
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll(".faq-btn");
+
+    buttons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        const content =
+          button.parentElement.querySelector(".faq-content");
+
+        const icon = button.querySelector("span:last-child");
+
+        content.classList.toggle("hidden");
+
+        icon.textContent =
+          content.classList.contains("hidden") ? "+" : "−";
+
+      });
+
+    });
+  </script>
+
+</body>
+</html>
